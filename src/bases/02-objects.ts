@@ -2,7 +2,7 @@ import { Pokemon } from "../models";
 import { PokemonClass } from "./03-class";
 
 export const pokemonIds = [1, 20, 30, 34, 66];
-export const bulbasaur: Pokemon = new PokemonClass({
+export const bulbasaur = new PokemonClass({
     id: 1,
     name: "bulbasaur"
 })

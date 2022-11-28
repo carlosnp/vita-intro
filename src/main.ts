@@ -10,6 +10,7 @@ import {
   pokemons,
   pikachu
 } from './bases'
+import { Squirtle } from './bases/04-injection'
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -31,6 +32,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <a href="${bulbasaur.imageUrl}" target="_blank">${bulbasaur.name}: ${bulbasaur.speak()}</a>
     <div>
       <a href="${pikachu.imageUrl}" target="_blank">${pikachu.name}: ${pikachu.scream()}</a>
+    </div>
+    <div>
+      <a href="${Squirtle.imageUrl}" target="_blank">${Squirtle.name}: ${Squirtle.speak()}</a>
     </div>
     <div>${pokemons}</div>
   </div>
