@@ -6,7 +6,9 @@ import {
   description,
   name,
   bulbasaur,
-  pokemonIds
+  pokemonIds,
+  pokemons,
+  pikachu
 } from './bases'
 
 
@@ -25,7 +27,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <button id="counter" type="button"></button>
     </div>
     <div>${pokemonIds}</div>
-    <div>${bulbasaur.name}</div>
+    <div>
+      <a href="${bulbasaur.imageUrl}" target="_blank">${bulbasaur.name}: ${bulbasaur.speak()}</a>
+    <div>
+      <a href="${pikachu.imageUrl}" target="_blank">${pikachu.name}: ${pikachu.scream()}</a>
+    </div>
+    <div>${pokemons}</div>
   </div>
 `
 
