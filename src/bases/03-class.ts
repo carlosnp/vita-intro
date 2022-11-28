@@ -1,4 +1,5 @@
-import { Pokemon } from "../models";
+import axios from "axios";
+import { Move, PokeAPIResponse, Pokemon } from "../models";
 
 export class PokemonClass {
     /**
@@ -30,6 +31,7 @@ export class PokemonClass {
     constructor(data: Pokemon) {
         this.id = data.id;
         this.name = data.name
+        this.getMoves();
     }
     /**
      * Gritar
@@ -46,8 +48,14 @@ export class PokemonClass {
     /**
      * Obtener movimientos
      */
-    getMoves(){
-        return 10;
+    async getMoves(): Promise<Move[]>{
+        const name = this.name.toLocaleLowerCase();
+        const { data } = await axios.get<PokeAPIResponse>('https://pokeapi.co/api/v2/pokemon/'+name);
+        if (!data) {
+            return [];
+        }
+        console.log(name, data.moves);
+        return data.moves;
     }
 }
 
